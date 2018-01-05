@@ -189,8 +189,8 @@ Recommended usage for CPAN distributions:
 =head1 DESCRIPTION
 
 Test::Perl::Critic wraps the L<Perl::Critic> engine in a convenient subroutine
-suitable for test programs written using the L<Test::More> framework.  This
-makes it easy to integrate coding-standards enforcement into the build
+suitable for test programs written using the L<Test::More>/L<Test2> frameworks.
+This makes it easy to integrate coding-standards enforcement into the build
 process.  For ultimate convenience (at the expense of some flexibility), see
 the L<criticism> pragma.
 
@@ -231,8 +231,8 @@ does, the violations will be reported in the test diagnostics.  The optional
 second argument is the name of test, which defaults to "Perl::Critic test for
 $FILE".
 
-If you use this form, you should load L<Test::More> and emit your own test plan
-first or call C<done_testing()> afterwards.
+If you use this form, you should load L<Test::More>/L<Test2::V0> and emit your
+own test plan first or call C<done_testing()> afterwards.
 
 =back
 
@@ -375,6 +375,8 @@ L<Module::Starter::PBP>
 L<Perl::Critic>
 
 L<Test::More>
+
+L<Test2::Suite>
 
 =head1 CREDITS
 
