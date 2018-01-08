@@ -100,7 +100,7 @@ sub all_critic_ok {
         my $have_mce = eval { require MCE::Grep; MCE::Grep->import; 1 };
 
         $pass = $have_mce ? _test_parallel(@files) : _test_serial(@files);
-        $ctx->ok($pass, 'all_critic_ok');
+        $ctx->done_testing;
     };
     return $pass;
 }
