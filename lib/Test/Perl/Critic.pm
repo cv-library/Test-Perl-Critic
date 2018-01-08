@@ -110,7 +110,8 @@ sub all_critic_ok {
 sub _test_parallel {
       my @files = @_;
 
-      eval { require Test2::IPC; Test2::IPC->import; 1 };
+      eval { require Test2::IPC; Test2::IPC->import; 1 }
+          or die "Unable to load Test2::IPC\n";
       my $okays = MCE::Grep->run( sub { critic_ok($_) }, @files );
       my $pass = $okays == @files;
 
