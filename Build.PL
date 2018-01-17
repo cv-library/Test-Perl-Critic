@@ -57,7 +57,6 @@ my $builder = $class->new(
     requires             => {
         'Carp'                      => 0,
         'English'                   => 0,
-        'MCE'                       => 1.827,
         'Perl::Critic'              => 1.105,
         'Perl::Critic::Utils'       => 1.105,
         'Perl::Critic::Violation'   => 1.105,
@@ -65,6 +64,16 @@ my $builder = $class->new(
         'Test::Builder'             => 0.88,
         'warnings'                  => 0,
     },
+
+    auto_features =>
+{
+  parallel_testing =>
+  {
+    description => "parallel tests",
+    requires => { MCE => 1.827 },
+    x_default => 1,
+  }
+},
 
     build_requires       => {
         'Test::More'                => 0,
